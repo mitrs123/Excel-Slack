@@ -11,13 +11,13 @@ const slackToken = process.env.SLACKTOKEN;
 app.use(bodyParser.json());
 
 app.post('/notify', async (req, res) => {
-  const { taskName } = req.body;
+  const { taskName,status } = req.body;
 
   try {
     const url = 'https://slack.com/api/chat.postMessage';
     const response = await axios.post(url, {
       channel: '#test',  // Change to your desired Slack channel name
-      text: `Task "${taskName}" is marked as done.`
+      text: `Task "${taskName}" is marked ${status}.`
     }, {
       headers: {
         'Content-Type': 'application/json',
