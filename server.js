@@ -16,7 +16,7 @@ app.post('/notify', async (req, res) => {
   try {
     const url = 'https://slack.com/api/chat.postMessage';
     const response = await axios.post(url, {
-      channel: '#test',  // Change to your desired Slack channel name
+      channel: "C078K594ARK",  // Change to your desired Slack channel name
       text: `Task "${taskName}" is marked ${status}.`
     }, {
       headers: {
